@@ -101,7 +101,7 @@ export default function Page() {
               .map(
                 (tarea) => {
                   return(
-                    <li className={styles.tarea}>
+                    <li key={creadoEl} className={styles.tarea}>
                       <h4>{tarea.nombre}</h4>
                       <p>{tarea.fecha}</p>
                       <p>{tarea.prioridad}</p>
