@@ -93,7 +93,7 @@ export default function Page() {
               tareas
               .filter((tarea) => tarea.nombre.toLowerCase().includes(filtroTexto.toLowerCase()))
               .filter(tarea => {
-                if (filtroPrioridad === "") {
+                if (filtroPrioridad === "" || filtroPrioridad === "Prioridad") {
                   return true;
                 }
                 return tarea.prioridad === filtroPrioridad;
@@ -101,7 +101,7 @@ export default function Page() {
               .map(
                 (tarea) => {
                   return(
-                    <li key={creadoEl} className={styles.tarea}>
+                    <li key={tarea.creadoEl} className={styles.tarea}>
                       <h4>{tarea.nombre}</h4>
                       <p>{tarea.fecha}</p>
                       <p>{tarea.prioridad}</p>
